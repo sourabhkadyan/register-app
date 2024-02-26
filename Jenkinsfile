@@ -1,6 +1,6 @@
-ister-apppipeline {
-    agent { label 'Jenkins-Agent' }
-    tools {
+pipeline {
+    agent any
+     tools {
         jdk 'Java17'
         maven 'Maven3'
     }
