@@ -1,4 +1,4 @@
-pipeline {
+ister-apppipeline {
     agent { label 'Jenkins-Agent' }
     tools {
         jdk 'Java17'
