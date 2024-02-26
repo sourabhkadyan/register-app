@@ -22,7 +22,7 @@ ister-apppipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'test', credentialsId: 'github', url: 'https://github.com/sourabhkadyan/register-app'
+                    git branch: 'test', credentialsId: 'github-creds', url: 'https://github.com/sourabhkadyan/register-app'
                 }
         }
 
