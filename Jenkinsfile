@@ -1,16 +1,8 @@
 pipeline {
     agent any
-     tools {
-        jdk 'java17'
-        maven 'maven3'
-    }
-    environment {
-	    APP_NAME = "register-app-pipeline"
-            RELEASE = "1.0.0"
-            DOCKER_USER = "11611883"
-            DOCKER_PASS = 'Sourabh@12'
-            IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
-            IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+    tools {
+        jdk 'Java17'
+        maven 'Maven3'
     }
     stages{
         stage("Cleanup Workspace"){
