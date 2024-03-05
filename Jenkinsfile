@@ -47,6 +47,7 @@ pipeline {
 	           }	
            }
        }
+	    
 	stage("Quality Gate"){
            steps {
                script {
@@ -54,18 +55,14 @@ pipeline {
                 }	
             }
         }
-	stage("Build Docker Image") {
+	    
+	stage("Build & Push Docker Image") {
             steps {
                 script {
                     docker.withRegistry('',DOCKER_PASS) {
                         docker_image = docker.build "${IMAGE_NAME}"
                     }
-                }
-            }
-	}
-	stage("Push Docker Image") {
-            steps {
-                script {
+
                     docker.withRegistry('',DOCKER_PASS) {
                         docker_image.push("${IMAGE_TAG}")
                         docker_image.push('latest')
